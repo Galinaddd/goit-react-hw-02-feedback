@@ -1,11 +1,12 @@
 import { Component } from 'react';
+import { Container } from './App.styled';
 
 import {
   FeedbackOptions,
   FeedbackStatistics,
   Notification,
   Section,
-} from './FeedbackWidget';
+} from '../FeedbackWidget';
 
 export class App extends Component {
   state = {
@@ -40,7 +41,7 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
 
     return (
-      <>
+      <Container>
         <Section title="Please leave your feedback">
           <FeedbackOptions
             options={Object.keys(state)}
@@ -60,7 +61,7 @@ export class App extends Component {
             <Notification message="No feedback given" />
           )}
         </Section>
-      </>
+      </Container>
     );
   }
 }
