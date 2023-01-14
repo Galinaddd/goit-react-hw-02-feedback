@@ -1,4 +1,4 @@
-import { FeedbackOptions } from './FeedbackOptions';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { FeedbackStatistics } from './FeedbackStatistics';
 import { Notification } from './Notification ';
 import { Section } from './Section';
