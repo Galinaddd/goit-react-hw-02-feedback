@@ -1,9 +1,6 @@
-// import { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  // const ratings = Object.key(options);
-  console.log('feedbackOptions', options);
   return (
     <>
       {options.map(option => (
@@ -11,7 +8,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           type="button"
           key={option}
           onClick={() => {
-            console.log('click by', option);
             onLeaveFeedback(option);
           }}
         >
@@ -20,4 +16,9 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       ))}
     </>
   );
+};
+
+FeedbackOptions.prototype = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

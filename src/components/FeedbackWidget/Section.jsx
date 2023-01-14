@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Section = ({ title, children }) => (
   <>
     <section>
@@ -6,3 +8,7 @@ export const Section = ({ title, children }) => (
     </section>
   </>
 );
+Section.prototype = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node,
+};

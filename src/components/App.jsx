@@ -1,8 +1,12 @@
 import { Component } from 'react';
-import { FeedbackOptions } from './FeedbackWidget/FeedbackOptions';
-import { FeedbackStatistics } from './FeedbackWidget/FeedbackStatistics';
-import { Section } from './FeedbackWidget/Section';
-import { Notification } from './FeedbackWidget/Notification ';
+
+import {
+  FeedbackOptions,
+  FeedbackStatistics,
+  Notification,
+  Section,
+} from './FeedbackWidget';
+
 export class App extends Component {
   state = {
     good: 0,
@@ -12,8 +16,6 @@ export class App extends Component {
 
   stateUpdate = key => {
     this.setState(prevState => {
-      console.log('it is setstate', key);
-      console.log(prevState[key]);
       return {
         ...prevState,
         [key]: prevState[key] + 1,
@@ -33,17 +35,10 @@ export class App extends Component {
       : 0;
   };
 
-  ratings = ['good', 'neutral', 'bad'];
-
   render() {
-    const {
-      ratings,
-      state,
-      countPositiveFeedbackPercentage,
-      countTotalFeedback,
-    } = this;
+    const { state, countPositiveFeedbackPercentage, countTotalFeedback } = this;
     const { good, neutral, bad } = this.state;
-    console.log(ratings, state);
+
     return (
       <>
         <Section title="Please leave your feedback">
@@ -55,7 +50,6 @@ export class App extends Component {
         <Section title="Statistic">
           {good || neutral || bad ? (
             <FeedbackStatistics
-              state={state}
               good={good}
               neutral={neutral}
               bad={bad}
