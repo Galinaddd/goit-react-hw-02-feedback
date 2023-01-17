@@ -13,19 +13,17 @@ export const FeedbackStatistics = ({
         Good: <Value>{good}</Value>
       </P>
       <P>
-        {' '}
         Neutral:<Value>{neutral}</Value>
       </P>
       <P>
-        {' '}
         Bad:<Value>{bad}</Value>{' '}
       </P>
 
       <P>
-        Total: <Value>{total()}</Value>{' '}
+        Total: <Value>{total}</Value>{' '}
       </P>
       <P>
-        Positive feedback:<Value>{positivePercentage()}%</Value>
+        Positive feedback:<Value>{positivePercentage}%</Value>
       </P>
     </>
   );
@@ -36,5 +34,5 @@ FeedbackStatistics.prototype = {
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.func.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
